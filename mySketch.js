@@ -120,21 +120,21 @@ function setup() {
 }
 
 function draw() {
+	background(0);
 
 	//取得音量
   let audioLevel = amplitude.getLevel();
 	loadingFactor = lerp(loadingFactor,targetLoadingFactor,0.04)
 	
 	//設定Shader uniforms
-	theShader.setUniform('u_resolution',[width/1000,height/1000])
-	theShader.setUniform('u_time',millis()/1000)
-	theShader.setUniform('u_mouse',[mouseX/width,mouseY/height])
-	theShader.setUniform('tex0',webGLGraphics)
-	theShader.setUniform('tex1',canvasTexture)
+	// theShader.setUniform('u_resolution',[width/1000,height/1000])
+	// theShader.setUniform('u_time',millis()/1000)
+	// theShader.setUniform('u_mouse',[mouseX/width,mouseY/height])
+	// theShader.setUniform('tex0',webGLGraphics)
+	// theShader.setUniform('tex1',canvasTexture)
 	
-	webGLGraphics2.shader(theShader)
-	// webGLGraphics2.rect(00,width,height)
-	webGLGraphics2.rect(-width/2,-height/2,width,height)
+	// webGLGraphics2.shader(theShader)
+	// webGLGraphics2.rect(-width/2,-height/2,width,height)
 	 
 	//更新材質
 	for(var i=0;i<textureCount;i++){
@@ -214,7 +214,7 @@ function draw() {
 	
 	//使用有經過 GLSL 的webGLGraphics2
 	//圖層處理 主圖像 (webGLGraphics) -> GLSL Shader (的webGLGraphics2) -> 主畫布
-	image(webGLGraphics2,0,0,width,height)
+	// image(webGLGraphics2,0,0,width,height)
 	
 	//舊的overlay 材質
 	// push()
